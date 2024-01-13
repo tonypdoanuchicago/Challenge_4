@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<title>Page Title</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="assets/css/styles.css">
+<style>
+</style>
+<body>
+
+<div>
+<div style="margin-left: 50px; margin-top: 50px;">
+ <span onclick="viewHighScores()">View high scores</span>
+</div>
+
+<div style="margin-right: 50px; margin-top: 0px; float: right;">
+    Time:&nbsp;<span id="timeID">0</span>
+</div>
+</div>
+
+<div id="progressLoader" class="loader" style="display: none;"></div>
+
+<div id="intro_screen">
+    <div style="font-size: xx-large; display: flex; justify-content: center;margin-top: 50px;">
+        Coding Quiz Challenge
+    </div>
+    <div style="font-size: large; display: flex; justify-content: center; margin-top: 50px;">
+        Try to answer the following code related questions within the time limit.  Keep in mind that incorrect answers will penalize your score/time by ten seconds!
+    </div>
+    <div onclick="showQuestionScreen()" class="button" style="width: 75px; margin-top: 50px; font-size: large; display: flex; justify-content: center;">
+        Start Quiz
+    </div>
+</div>
+
+<div id="question_screen" style="display: none;">
+    <div id="questionID" style="font-size: xx-large; display: flex; justify-content: center;margin-top: 50px;">
+        Question
+    </div>
+    <button id="answerA_ID" onclick="handleAnswer(1)"  class="button" style="width: 350px; margin-top: 50px; font-size: large; display: flex; justify-content: center;">
+        1. Answer A
+    </button>
+    <button id="answerB_ID" onclick="handleAnswer(2)" class="button" style="width: 350px; margin-top: 25px; font-size: large; display: flex; justify-content: center;">
+        2. Answer B
+    </button>
+    <button id="answerC_ID" onclick="handleAnswer(3)" class="button" style="width: 350px; margin-top: 25px; font-size: large; display: flex; justify-content: center;">
+        3. Answer C
+    </button>
+    <button id="answerD_ID" onclick="handleAnswer(4)" class="button" style="width: 350px; margin-top: 25px; font-size: large; display: flex; justify-content: center;">
+        4. Answer D
+    </button>
+    <div id="answerID" style="font-size: xx-large; display: flex; justify-content: center;margin-top: 25px;">
+        Right!
+    </div>
+</div>
+
+<div id="results_screen" style="display: none;">
+    <div style="font-size: xx-large; display: flex; justify-content: center;margin-top: 50px;">
+        All done!
+    </div>
+    <div style="font-size: large; display: flex; justify-content: center; margin-top: 20px;">
+    Your final score is &nbsp;<span id="scoreID">0</span>
+    </div>
+    <div style="font-size: large; display: flex; justify-content: center; margin-top: 20px;">
+        Enter initials: &nbsp;<input id="inputInitialsID" type="text" /> 
+    </div>
+    <div>
+        <button class="button" onclick="saveScore()" style="width: 75px; margin-top: 20px; font-size: large; display: flex; justify-content: center;">
+            Submit
+        </button>
+    </div>
+</div>
+
+<div id="high_scores_screen" style="display: none;">
+    <div style="font-size: xx-large; display: flex; justify-content: center;margin-top: 50px;">
+        High Scores
+    </div>
+    <div id="high_scores_list_id" style="font-size: x-large; display: flex; justify-content: center; margin-top: 20px;">
+        
+    </div>
+    <div>
+        <button id="goBackBtn" onclick="showIntroScreen()" class="button" style="width: 150px; margin-top: 20px; font-size: large; display: flex; justify-content: center;">
+            Go Back
+        </button>
+        <button id="clearBtn" onclick="clearScores()" class="button" style="width: 150px; margin-top: 20px; font-size: large; display: flex; justify-content: center;">
+            Clear high scores
+        </button>
+    </div>
+</div>
+
+<script src="assets/script/script.js"></script>
+</body>
+</html>
+
